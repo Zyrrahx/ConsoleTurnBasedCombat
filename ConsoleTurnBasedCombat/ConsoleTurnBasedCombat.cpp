@@ -1,11 +1,43 @@
 // ConsoleTurnBasedCombat.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
-#include <iostream>
+#include "Battle.h"
 
 int main()
 {
+	do
+	{
+		std::cout << '\n' << "Press a key to continue.";
+	} while (std::cin.get() != '\n');
+	//test UI functionality and drawing commands
+	UI currentUI;
+	Battle currentBattle;
+	currentUI.UICreateWindow();
+	do
+	{
+		std::cout << '\n' << "Press a key to continue.";
+	} while (std::cin.get() != '\n');
     std::cout << "Hello World!\n";
+	currentUI.SetCursorPosition(1, 1);
+	do
+	{
+		for (int i = 0; i < 15; i++)
+		{
+			std::cout << '\n';
+		}
+	} while (std::cin.get() != '\n');
+	currentUI.SetCursorPosition(0, 0);
+	do
+	{
+	} while (std::cin.get() != '\n');
+	std::cout << "Testing new cursor pos";
+	std::cout << '\n';
+	do
+	{
+	} while (std::cin.get() != '\n');
+	currentUI.Cls();
+	do
+	{
+	} while (std::cin.get() != '\n');
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

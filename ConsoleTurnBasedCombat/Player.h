@@ -11,7 +11,7 @@ enum class Stats {
 	SPD = 4,
 	NELEMENTS = 5
 };
-std::map < Stats, std::string > statNames{				{Stats::STR, "Strength"}, 
+static std::map < Stats, std::string > statNames{		{Stats::STR, "Strength"}, 
 														{Stats::DEF, "Defence"}, 
 														{Stats::MAT, "Magical Attack"},
 														{Stats::MDF, "Magical Defence"},
@@ -21,29 +21,35 @@ class Player
 {
 public:
 	std::string name;
-	int level;
-	int currentSpeed;
+	int level = 1;
+	int currentSpeed = 10;
 	bool isPlayable = false;
+	int health = 10;
+	int mana = 5;
 
-	int fetchBaseStat(Stats x)
+	int FetchBaseStat(Stats x)
 	{
 		return this->baseStats[(int)x];
 	}
-	int fetchStat(Stats x)
+	int FetchStat(Stats x)
 	{
 		return this->stats[(int)x];
 	}
-	int* fetchAllBaseStats()
+	int* FetchAllBaseStats()
 	{
 		int* statsPointer = new int[(int)Stats::NELEMENTS];
 		statsPointer = this->baseStats;
 		return statsPointer;
 	}
-	int* fetchAllStats()
+	int* FetchAllStats()
 	{
 		int* statsPointer = new int[(int)Stats::NELEMENTS];
 		statsPointer = this->stats;
 		return statsPointer;
+	}
+	void ReadFromFile(std::string filePath)
+	{
+
 	}
 
 private:
